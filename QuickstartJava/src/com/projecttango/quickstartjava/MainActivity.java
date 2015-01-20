@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         // Set up Tango configuration for motion tracking
         // If you want to use other APIs, add more appropriate to the config
         // like: mConfig.putBoolean(TangoConfig.KEY_BOOLEAN_DEPTH, true)
-        mConfig = new TangoConfig();
+        
         mConfig = mTango.getConfig(TangoConfig.CONFIG_TYPE_CURRENT);
         mConfig.putBoolean(TangoConfig.KEY_BOOLEAN_MOTIONTRACKING, true);
 
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
         // Lock the Tango configuration and reconnect to the service each time
         // the app
         // is brought to the foreground.
-        super.onResume();
+        
         if (!mIsTangoServiceConnected) {
             startActivityForResult(
                     Tango.getRequestPermissionIntent(Tango.PERMISSIONTYPE_MOTION_TRACKING),
